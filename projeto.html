@@ -5,53 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>12 Tavoli | Ristorante Italiano Contemporaneo</title>
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS: framework para layout responsivo e componentes prontos -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Bootstrap Icons -->
+  <!-- Bootstrap Icons: biblioteca de ícones para usar ícones de estrelas, check, etc -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: tipografias Playfair Display para títulos e Inter para corpo -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
+    /* Fonte padrão do corpo do site */
     body {
       font-family: 'Inter', sans-serif;
     }
+
+    /* Fontes específicas para títulos */
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
     }
+
+    /* HERO: imagem de fundo com overlay escuro */
     .hero {
+      /* linear-gradient adiciona uma camada semi-transparente sobre a imagem
+         para garantir que o texto fique legível, mesmo sobre a foto */
       background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-      url('https://unsplash.com/pt-br/fotografias/uma-mesa-coberta-com-pratos-de-comida-e-copos-de-vinho-vQNm-PtNhxs') center/cover;
-      height: 100vh;
-      color: white;
+      url('https://images.unsplash.com/photo-1546549039-56cce6e4b4a7') center/cover; /* centraliza a imagem e cobre todo o espaço */
+      height: 100vh; /* altura da seção ocupa 100% da altura da viewport */
+      color: white; /* cor do texto */
+      display: flex; /* transforma em flex container para alinhar o conteúdo */
+      align-items: center; /* alinha verticalmente ao centro */
+      justify-content: center; /* centraliza horizontalmente */
+      text-align: center; /* garante centralização do texto */
     }
+
+    /* Menu: posiciona preço à direita usando float e destaca visualmente */
     .menu-item span {
-      float: right;
+      float: right; /* desloca o preço para o lado direito do container */
       font-weight: 500;
     }
+
+    /* Rodapé */
     footer {
       background: #111;
       color: #ccc;
     }
+
+    /* Estilo da estrela (avaliações) */
     .star {
-      color: #f5c518;
+      color: #f5c518; /* amarelo estilo "star rating" */
+    }
+
+    /* Pequenas melhorias de responsividade */
+    @media (max-width: 767px) {
+      .menu-item span {
+        float: none; /* em telas pequenas, o preço fica abaixo do nome do prato */
+        display: block;
+        margin-top: 0.25rem;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAVBAR: barra fixa no topo, responsiva com colapso em telas menores -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#">12 Tavoli</a>
+    <!-- Botão que aparece em telas pequenas para abrir menu colapsado -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <!-- Menu colapsável -->
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto">
+        <!-- Links que levam para seções específicas da página -->
         <li class="nav-item"><a class="nav-link" href="#about">Chi siamo</a></li>
         <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
         <li class="nav-item"><a class="nav-link" href="#specials">Specialità</a></li>
@@ -63,23 +92,27 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero d-flex align-items-center">
-  <div class="container text-center">
+<!-- HERO: seção inicial chamativa -->
+<section class="hero">
+  <!-- Conteúdo centralizado automaticamente pelo flex da classe .hero -->
+  <div class="container">
     <h1>Benvenuto da <span class="text-warning">12 Tavoli</span></h1>
     <p class="lead">Solo dodici tavoli. Nessuna fretta. Cucina italiana autentica.</p>
+    <!-- Botões com cores diferentes, um preenchido e outro outline -->
     <a href="#menu" class="btn btn-warning me-2">Scopri il Menu</a>
     <a href="#contact" class="btn btn-outline-light">Prenota un Tavolo</a>
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT: seção sobre o restaurante -->
 <section id="about" class="py-5">
   <div class="container">
     <div class="row align-items-center">
+      <!-- Coluna da imagem -->
       <div class="col-md-6">
-        <img src="https://unsplash.com/pt-br/fotografias/pizza-com-folhas-verdes-e-molho-vermelho-XtLPfib7OuM" class="img-fluid rounded" alt="ristorante">
+        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1" class="img-fluid rounded" alt="ristorante">
       </div>
+      <!-- Coluna de texto -->
       <div class="col-md-6">
         <h2>Tradizione e Tempo</h2>
         <p class="fst-italic">12 Tavoli nasce dall'idea che mangiare non sia un consumo, ma un rituale.</p>
@@ -94,11 +127,12 @@
   </div>
 </section>
 
-<!-- MENU -->
+<!-- MENU: exibe itens do cardápio lado a lado em colunas -->
 <section id="menu" class="py-5 bg-light">
   <div class="container">
     <h2 class="text-center mb-4">Il Nostro Menu</h2>
     <div class="row">
+      <!-- Coluna 1 -->
       <div class="col-md-6">
         <div class="menu-item">
           <p>Tagliatelle al Burro e Salvia <span>R$ 48</span></p>
@@ -109,6 +143,7 @@
           <small>Riso carnaroli, parmigiano stagionato</small>
         </div>
       </div>
+      <!-- Coluna 2 -->
       <div class="col-md-6">
         <div class="menu-item">
           <p>Vitello Brasato <span>R$ 68</span></p>
@@ -123,7 +158,7 @@
   </div>
 </section>
 
-<!-- SPECIALS -->
+<!-- SPECIALS: seção de destaques ou pratos sazonais -->
 <section id="specials" class="py-5">
   <div class="container text-center">
     <h2>Specialità della Casa</h2>
@@ -131,7 +166,7 @@
   </div>
 </section>
 
-<!-- DELIVERY -->
+<!-- DELIVERY: seção sobre pedidos especiais -->
 <section id="delivery" class="py-5 bg-light">
   <div class="container text-center">
     <h2>Ordini Speciali</h2>
@@ -144,7 +179,7 @@
   </div>
 </section>
 
-<!-- PROMOTIONS -->
+<!-- PROMOTIONS: eventos especiais e experiências -->
 <section id="promotions" class="py-5">
   <div class="container text-center">
     <h2>Esperienze Speciali</h2>
@@ -166,14 +201,16 @@
   </div>
 </section>
 
-<!-- REVIEWS -->
+<!-- REVIEWS: avaliações de clientes -->
 <section id="reviews" class="py-5 bg-light">
   <div class="container">
     <h2 class="text-center mb-5">Valutazioni dei Clienti</h2>
     <div class="row">
+      <!-- Card 1 -->
       <div class="col-md-4">
         <div class="p-4 border rounded h-100">
           <div class="mb-2">
+            <!-- Estrelas: preenchidas e metade -->
             <i class="bi bi-star-fill star"></i>
             <i class="bi bi-star-fill star"></i>
             <i class="bi bi-star-fill star"></i>
@@ -184,7 +221,7 @@
           <strong>— Marco R.</strong>
         </div>
       </div>
-
+      <!-- Card 2 -->
       <div class="col-md-4">
         <div class="p-4 border rounded h-100">
           <div class="mb-2">
@@ -192,13 +229,13 @@
             <i class="bi bi-star-fill star"></i>
             <i class="bi bi-star-fill star"></i>
             <i class="bi bi-star-fill star"></i>
-            <i class="bi bi-star-half star"></i>
+            <i class="bi bi-star-half star"></i> <!-- meia estrela para avaliação parcial -->
           </div>
           <p class="fst-italic">"Servizio calmo e piatti impeccabili."</p>
           <strong>— Giulia M.</strong>
         </div>
       </div>
-
+      <!-- Card 3 -->
       <div class="col-md-4">
         <div class="p-4 border rounded h-100">
           <div class="mb-2">
@@ -216,48 +253,22 @@
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- GALLERY: imagens em grid responsivo -->
 <section id="gallery" class="py-5 bg-light">
   <div class="container">
     <h2 class="text-center mb-4">Galleria</h2>
     <div class="row g-3">
-      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" class="img-fluid rounded"></div>
-      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1525755662778-989d0524087e" class="img-fluid rounded"></div>
-      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" class="img-fluid rounded"></div>
+      <div class="col-md-4">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" class="img-fluid rounded" alt="pasta">
+      </div>
+      <div class="col-md-4">
+        <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e" class="img-fluid rounded" alt="risotto">
+      </div>
+      <div class="col-md-4">
+        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" class="img-fluid rounded" alt="dessert">
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="py-5">
-  <div class="container">
-    <h2 class="text-center mb-4">Fale Conosco</h2>
-    <form class="row g-3">
-      <div class="col-md-6"><input type="text" class="form-control" placeholder="Il tuo nome"></div>
-      <div class="col-md-6"><input type="email" class="form-control" placeholder="La tua email"></div>
-      <div class="col-12"><textarea class="form-control" rows="4" placeholder="Messaggio"></textarea></div>
-      <div class="col-12 text-center"><button class="btn btn-dark">Invia richiesta</button></div>
-    </form>
-  </div>
-</section>
-
-<!-- SOCIAL -->
-<section class="py-4 bg-dark text-center">
-  <div class="container">
-    <h5 class="text-light mb-3">Seguici</h5>
-    <a href="#" class="text-light fs-4 me-3"><i class="bi bi-instagram"></i></a>
-    <a href="#" class="text-light fs-4 me-3"><i class="bi bi-facebook"></i></a>
-    <a href="#" class="text-light fs-4"><i class="bi bi-whatsapp"></i></a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="py-4 text-center">
-  <p>© 2025 12 Tavoli — Ristorante Italiano</p>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-
-
+<!-- CONTACT: formulário simple
