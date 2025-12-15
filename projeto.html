@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12 Tavoli | Ristorante Italiano Contemporaneo</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+      url('https://images.unsplash.com/photo-1546549039-56cce6e4b4a7') center/cover;
+      height: 100vh;
+      color: white;
+    }
+    .menu-item span {
+      float: right;
+      font-weight: 500;
+    }
+    footer {
+      background: #111;
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">12 Tavoli</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">Chi siamo</a></li>
+        <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="#specials">Specialità</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Galleria</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contatti</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero d-flex align-items-center">
+  <div class="container text-center">
+    <h1>Benvenuto da <span class="text-warning">12 Tavoli</span></h1>
+    <p class="lead">Solo dodici tavoli. Nessuna fretta. Cucina italiana autentica.</p>
+    <a href="#menu" class="btn btn-warning me-2">Scopri il Menu</a>
+    <a href="#contact" class="btn btn-outline-light">Prenota un Tavolo</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1" class="img-fluid rounded" alt="ristorante">
+      </div>
+      <div class="col-md-6">
+        <h2>Tradizione e Tempo</h2>
+        <p class="fst-italic">12 Tavoli nasce dall'idea che mangiare non sia un consumo, ma un rituale.</p>
+        <ul>
+          <li><i class="bi bi-check-circle"></i> Pasta fresca fatta ogni giorno</li>
+          <li><i class="bi bi-check-circle"></i> Ingredienti stagionali</li>
+          <li><i class="bi bi-check-circle"></i> Solo 12 tavoli per garantire qualità</li>
+        </ul>
+        <p>Qui il tempo è parte del piatto. Nessun delivery, nessuna fretta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Il Nostro Menu</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="menu-item">
+          <p>Tagliatelle al Burro e Salvia <span>R$ 48</span></p>
+          <small>Pasta fresca, burro artigianale e salvia</small>
+        </div>
+        <div class="menu-item">
+          <p>Risotto al Parmigiano 24 mesi <span>R$ 52</span></p>
+          <small>Riso carnaroli, parmigiano stagionato</small>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="menu-item">
+          <p>Vitello Brasato <span>R$ 68</span></p>
+          <small>Cotto lentamente al vino rosso</small>
+        </div>
+        <div class="menu-item">
+          <p>Panna Cotta alla Vaniglia <span>R$ 26</span></p>
+          <small>Con coulis di frutti rossi</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALS -->
+<section id="specials" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Specialità della Casa</h2>
+    <p class="text-center">Menu stagionale che cambia ogni mese.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Galleria</h2>
+    <div class="row g-3">
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" class="img-fluid rounded"></div>
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1525755662778-989d0524087e" class="img-fluid rounded"></div>
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" class="img-fluid rounded"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Prenotazioni</h2>
+    <form class="row g-3">
+      <div class="col-md-6"><input type="text" class="form-control" placeholder="Il tuo nome"></div>
+      <div class="col-md-6"><input type="email" class="form-control" placeholder="La tua email"></div>
+      <div class="col-12"><textarea class="form-control" rows="4" placeholder="Messaggio"></textarea></div>
+      <div class="col-12 text-center"><button class="btn btn-dark">Invia richiesta</button></div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-4 text-center">
+  <p>© 2025 12 Tavoli — Ristorante Italiano</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
